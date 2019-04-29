@@ -39,6 +39,8 @@ Common/useful commands:
 22. git stash list //lists all things in stash, and shows what branch you were in when you made it 
 23. git stash -p show stash@{n} //shows the nth stash's contents 
 24. git stash pop stash@{n} //brings nth stash into working directory, and it removes it from stash. if you want to leave a copy in stash, use git stash apply ... (note: merge conflicts are possible) 
-25. git stash drop stash@{n} //removes nth stash content, or git stash clear to remove everything 
-26. Once you make a github repo, and you have a directory on your local computer, do: git remote add origin https://github.com/manesioz/some_repo.git, and then git push -u origin master (push master code to origin) 
-27. 
+25. git stash drop stash@{n} //removes nth stash content, or git stash clear to remove everything
+
+Once you make a github repo, and you have a directory on your local computer, do: git remote add origin https://github.com/manesioz/some_repo.git, and then git push -u origin master (push master code to origin) 
+
+
