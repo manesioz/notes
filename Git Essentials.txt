@@ -30,7 +30,7 @@ Common/useful commands:
 13. git revert <hash referrence to some commit> //completely reverts some commit that is identified with the hash 
 14. git log --oneline //nice way of briefly seeing everything in the repo, there are other commands to have limit the amount of entries or the dates, etc 
 15. git branch <new_branch_name> //makes a new branch 
-16. git checkout <branch_name> switches (changes the HEAD pointer) to the branch called branch_name 
+16. git checkout <branch_name> //switches (changes the HEAD pointer) to the branch called branch_name 
 17. git branch -m <old_branch> <new_branch> // renames old_branch to new_branch 
 18. git branch -d <branch_to_delete> //delete a branch called branch_to_delete from the master branch 
 19. git merge <branch_name> //merges some branch into the master 
