@@ -1,2 +1,2 @@
-# Random Tutorials
-tutorials on various topics, often related to software development 
+# Random Tutorials/Notes
+tutorials/notes on various topics, often related to software development 
