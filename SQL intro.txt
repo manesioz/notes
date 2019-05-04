@@ -41,6 +41,20 @@ AND, OR operators also work as you would expect them to, often used after the WH
 ORDER BY ASC/DESC/column_name; //this orders the queried results depending on the specified order 
 SELECT name, year, imdb_rating FROM movies ORDER BY imdb_rating DESC; //example that orders the query by descending rating 
 
+LIMIT keyword; // limits the result 
+SELECT * FROM movies LIMIT 100; //limits queried results to 100 
+SELECT * FROM movies ORDER BY imdb_rating DESC LIMIT 3; //this query returns the top 3 movies 
+
+CASE statements allow for "If-then" statement functionality, usually used in SELECT statements. 
+SELECT name,
+ CASE
+  WHEN genre = 'romance' THEN 'Chill'
+  WHEN  genre = 'comedy' THEN 'Chill'
+  ELSE 'Intense'
+ END AS "Mood"
+FROM movies;
+//This query results in a new column named Mood, where each entry is either Chill or 
+Intense depending on the corresponding genre of that row. 
 
 
 
@@ -61,3 +75,8 @@ CREATE TABLE celebs (
    date_of_birth TEXT NOT NULL, //cannot be NULL (must contain some data) 
    date_of_death TEXT DEFAULT 'Not Applicable' //if not given data, the table will go with the default value 
 );
+
+
+
+
+
