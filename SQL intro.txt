@@ -1,4 +1,6 @@
-Relational databases are collections of tables, where each table has columns (or fields) and rows (or instances). The relational behaviour arises from the fact that each row has a Primary Key that uniquely identifies it, and you can use other table's primary key's in another table (now considered a foreign key) to describes relationships between the tables. 
+Relational databases are collections of tables, where each table has columns (or fields) and rows (or instances). 
+The relational behaviour arises from the fact that each row has a Primary Key that uniquely identifies it, 
+and you can use other table's primary key's in another table (now considered a foreign key) to describes relationships between the tables. 
 
 
 CREATE TABLE table_name ( //creates a table 
