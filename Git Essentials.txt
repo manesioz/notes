@@ -44,3 +44,4 @@ Common/useful commands:
 Once you make a github repo, and you have a directory on your local computer, do: git remote add origin https://github.com/manesioz/some_repo.git, and then git push -u origin master (push master code to origin) 
 
 
+ 
