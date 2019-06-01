@@ -7,28 +7,3 @@ Biggest things to consider:
 6. If the table is date sharded, ALWAYS use _TABLE_SUFFIX when limiting the queries range, and if the table is partitioned, ALWAYS use _PARTITIONTIME when limiting queries range
 
 NOTE: in Apache Airflow there is no Standard SQL support for BigQueryCheck() operators (only legacy SQL)
-
-
-Examples
-
-//Chained sub-queries
-WITH VoltageValues AS (
-	SELECT HadwareId, Voltage
-	FROM DebugTable
-	WHERE HardwareId IN (SELECT DISTINCT HardwareId FROM DebugTable ORDER BY HardwareId LIMIT 50)
-)
-, min_values AS (
-	SELECT HardwareId, MIN(Voltage) AS MinVoltage
-	FROM VoltageValues
-	GROUP BY HardwareId
-)
-, max_values AS (
-	SELECT HardwareId, MAX(Voltage) AS MaxVoltage
-	FROM VoltageValues
-	GROUP BY HardwareId
-)
-
-SELECT min_values.HardwareId, Voltage, MinVoltage, MaxVoltage
-FROM min_values
-JOIN max_values
-ON min_values.HardwareId = max_values.HardwareId;
