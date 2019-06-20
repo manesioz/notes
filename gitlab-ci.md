@@ -43,6 +43,8 @@ Build_Job:
         - pip3 install autopep8
         - autopep8 *.py    # dry-run, only print
         - autopep8 -i *.py # replace content in any .py files in the directory 
+        - pip3 install pylint 
+        - pylint *.py #verify that files were successfully linted 
     tags: 
         - test
   
