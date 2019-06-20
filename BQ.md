@@ -1,3 +1,5 @@
+# Google BigQuery - Quick Notes
+
 Biggest things to consider:
 1. It does not have Primary Keys! This means that there may be repeated rows.
 2. Be careful when using the LIMIT clause in a sub-query (since there are no PK's and BQ randomly chooses the rows if no ORDER BY clause is given, each time you run it you can get different records.
