@@ -61,3 +61,5 @@ To actually *run* this, we need to set up a Gitlab Runner. I set up a simple she
 I would suggest using a Docker executor. You can find the necessary install instructions [here](https://docs.gitlab.com/runner/install/)
 and configuration instructions [here](https://docs.gitlab.com/ee/ci/runners/) and registering instructions [here](https://docs.gitlab.com/runner/register/)
 
+
+When I have more time I'll add futher complexities to this (like updating an Apache Airflow job and customizing what triggering events I want) 
