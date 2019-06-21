@@ -70,8 +70,8 @@ Update_Airflow_Job:
     stage: deploy 
     script: 
         - echo "Deploy Stage - Update Airflow Job"
-        # - gsutil -m cp "$(< wheels.txt)" "$(< dag_wheels.txt)"
-        # - gsutil -m rsync -rd dags "$(< dag_location.txt)"
+        - gsutil -m cp "$(< wheels.txt)" "$(< dag_wheels.txt)"
+        - gsutil -m rsync -rd dags "$(< dag_location.txt)"
     tags: 
         - test 
 
