@@ -11,17 +11,26 @@ All the magic happens in the .gitlab-ci.yml file. I'll go through a simple pipel
 
 
 <pre><code>
+# -----Simple CI/CD Pipeline-----
+
+# First, create a virtual environment and install your dependencies, 
+# caching them so that each job retains them. 
+
+# Next, lint all Python files contained within Pipelines/dags/ and Pipelines/dags/DATAFLOW directories 
+
+# Then, run unit tests. 
+
+# Finally, update the Apache Airflow job accordingly
+
+
 stages: 
     - build 
     - test 
+    - deploy 
 
 
 variables:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-
-
-# If you want to also cache the installed packages, you have to install
-# them in a virtualenv and cache it as well.
 
 
 cache:
@@ -30,21 +39,21 @@ cache:
         - venv/
         
 before_script:
-    - python3 -V  # Print out python version for debugging
+    - python3 -V 
     - pip3 install virtualenv
     - virtualenv venv
     - source venv/bin/activate
 
 
-Build_Job: 
+Lint_Job: 
     stage: build 
     script: 
-        - echo "Build Stage - Linting" 
         - pip3 install autopep8
-        - autopep8 *.py    # dry-run, only print
-        - autopep8 -i *.py # replace content in any .py files in the directory 
         - pip3 install pylint 
-        - pylint *.py #verify that files were successfully linted 
+        - cd Pipelines/dags
+        - autopep8 *.py    # dry-run, only print
+        - autopep8 -i *.py # replace content
+        - pylint *.py **/*.py #verify that files were properly linted 
     tags: 
         - test
   
@@ -53,7 +62,16 @@ Test_Job:
     script: 
         - echo "Test Stage - Run Unit Tests"
         - pip3 install pytest 
-        - pytest #runs all test files
+        - pytest # runs all test files in the form *_test.py or test_*.py 
+    tags: 
+        - test 
+
+Update_Airflow_Job: 
+    stage: deploy 
+    script: 
+        - echo "Deploy Stage - Update Airflow Job"
+        # - gsutil -m cp "$(< wheels.txt)" "$(< dag_wheels.txt)"
+        # - gsutil -m rsync -rd dags "$(< dag_location.txt)"
     tags: 
         - test 
 
