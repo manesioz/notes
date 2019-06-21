@@ -82,4 +82,4 @@ I would suggest using a Docker executor. You can find the necessary install inst
 and configuration instructions [here](https://docs.gitlab.com/ee/ci/runners/) and registering instructions [here](https://docs.gitlab.com/runner/register/)
 
 
-When I have more time I'll add futher complexities to this (like updating an Apache Airflow job and customizing what triggering events I want) 
+Note: further complexities can be added such as customized trigger events and more robust integration testing 
