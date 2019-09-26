@@ -1,0 +1,151 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{4pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{ #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://manesioz.github.io/}{\Large Zachary Manesiotis}} & Email : \href{mailto:zack.manesiotis@gmail.com}{zack.manesiotis@gmail.com}\\
+  \href{http://manesioz.github.io/}{http://manesioz.github.io/} & Mobile : +1-416-919-2203 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {McMaster University}{Hamilton, ON}
+      {Bachelor of Engineering in Electrical and Computer Engineering - Dean's Honour List}{Sept. 2017 - May 2022}
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Geotab}{Oakville, ON}
+      {Data Engineering Intern}{May 2019 - Present}
+      \resumeItemListStart
+        \resumeSubItem{}
+          {Developed, orchestrated, and managed performant, scalable, and distributed ETL pipelines which streamed petabytes of geospatial data from \textgreater 1 Million vehicles daily using Python, Apache Airflow, Beam, and Google Cloud Platform.} 
+        \resumeSubItem{}
+          {Built a performant, distributed messaging system using Google Cloud Pub/Sub, Cloud Function, and Node.js.} 
+        \resumeItem{}
+          {Took initiative to develop CI/CD pipelines from scratch using Gitlab-CI for small teams, increasing code quality and coverage by over 40\%.}
+        \resumeItem{}
+          {Developed an end-to-end automated data quality monitoring service using Apache Airflow and GCP (BigQuery, Cloud Pub/Sub, Kubernetes Engine) which enabled teams to identify the underlying firmware issues.}
+        \resumeItem{}
+          {Dynamically managed and allocated infrastructure with scripts and Google Kubernetes Engine to optimize use, saving hundreds of dollars per month by eliminating inefficient use of resources.}
+        \resumeItem{}
+          {Used Python and various data visualization libraries (MapBoxGL, Matplotlib, Brancas, Dash) to develop custom examples and tutorials on data.geotab.com to encourage users to explore open data.}
+        \resumeItem{}
+          {Leveraged OpenStreetMap data and other open-source tools to develop actionable insights for city planners and other government agencies.}
+        \resumeItem{}
+          {Assisted with feature-engineering, data cleaning, and development of Random Forest classifiers which helped clients identify key factors affecting vehicle battery health.}
+        \resumeItem{}
+          {Collaborated with business and product teams to develop a data-driven 2-tiered pricing scheme for clients.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Secure Graphene:}
+      {Extended the open-source project Graphene, which is a library for making GraphQL APIs in Python, by providing out-of-the-box solutions for securing your API against malicious queries (for example, query depth limiting).}
+    \resumeSubItem{Cartography:}
+      {Contributing to Lyft's open-source project by adding Google Cloud Storage Bucket ingestion and subsequently consolidating it's infrastructure assets and relationships in a Neo4j database.}
+    \resumeSubItem{Networkx:}
+      {Contributed to the open-source project Networkx by revising error messages and string formatting according to Python best-practices.}
+    \resumeSubItem{Music in Motion:}
+      {Developed a gesture-controlled music player which integrates ultrasonic sensors with Spotify's API.}
+    \resumeSubItem{Mars Rover Team:}
+      {Assisted in the architecture and development of the vision and path-planning systems of an autonomous rover. Development was in a Linux environment using Python and ROS.}
+    \resumeSubItem{iGEM:}
+      {Developed mathematical models and visualizations for McMaster University's Synthetic Biology team.}
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Skills}
+ \resumeSubHeadingListStart
+    \resumeSubItem{Languages:}
+      {Python, SQL, Java, C, HTML/CSS, JavaScript, Go, Bash}
+    \resumeSubItem{Technologies:}
+      {Git, Apache Airflow \& Beam, Google Cloud Platform, JIRA, Kafka, ElasticSearch}
+    \resumeSubItem{Frameworks/Libraries:}
+      {Django, Graphene, Pandas, Numpy, Scipy, Scikit-learn, Networkx, Matplotlib, Selenium}
+%   \item{
+%      \textbf{Languages}{: Python, Java, SQL, C}
+%      \hfill
+%      \textbf{Technologies}{: GCP (BigQuery, GCE, Cloud Scheduler, etc), Apache Airflow, Docker, GraphQL, Kafka}
+%   }
+%\textbullet \hspace{3pt}
+ \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
